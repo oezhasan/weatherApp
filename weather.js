@@ -10,8 +10,8 @@ export default class weather{
             //.then(response => response.json())
             //.then(data => console.log(data));
             const data = await response.json();
-            console.log(data);
-            this.convertData(data);
+            const convertedData = this.convertData(data);
+            return convertedData;
         }
         catch (error){
             console.log(error)
@@ -19,11 +19,16 @@ export default class weather{
     }
 
     convertData(d){
-        console.log("A")
-        console.log(d)
-        let dateTemp = d.main.temp
-        console.log(dateTemp)
-        this.dom.updateWeather(dateTemp)
+        const convertedData = {
+            'location': d.name,
+            'temp': d.main.temp,
+            'pressure': d.main.pressure,
+            'humidity': d.main.humidity,
+            'feels_like': d.main.feels_like,
+            'temp_min': d.main.temp_min,
+            'temp_max': d.main.temp_max,
+        }
+        return convertedData;
     }    
 }
 

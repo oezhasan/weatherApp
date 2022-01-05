@@ -7,21 +7,77 @@
 *{
     margin: 0;
     padding: 0;
+    font-size: 20px;
     box-sizing: border-box;
+}
+
+h2{
+    font-size: 47px;
 }
 main{
     display:flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
     height: 100vh;
 }
 
 .form{
     padding: 2rem;
     border: 1px solid var(--clr-dark);
-    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
+
+.form *{
+}
+
+#location{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: blue
+}
+
+#btn-submit{
+    background-color: #04AA6D;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+
+.output{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 35vw;
+    height: 35vh;
+    border: 1px solid var(--clr-dark);
+}
+
+.output-details{
+    align-self: center;
+    margin-top: auto;
+    display:flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    margin-bottom: 2rem;
+    align-items:flex-end;
+}
+
+
+
+
+
+
+
+
 
 .inactive{
     display:none;
