@@ -1,0 +1,28 @@
+:root {
+    --clr-dark: #333;
+    --clr-light: #eee;
+    --clr-accent: #ddd;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    height: 100vh;
+}
+
+.form{
+    padding: 2rem;
+    border: 1px solid var(--clr-dark);
+    
+}
+
+.inactive{
+    display:none;
+}
