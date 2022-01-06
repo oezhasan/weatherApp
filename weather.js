@@ -14,19 +14,23 @@ export default class weather{
             return convertedData;
         }
         catch (error){
-            console.log(error)
+            throw new Error("City not found");
         }
     }
 
     convertData(d){
+        console.log(d)
         const convertedData = {
             'location': d.name,
+            'country': d.sys.country,
             'temp': d.main.temp,
             'pressure': d.main.pressure,
             'humidity': d.main.humidity,
             'feels_like': d.main.feels_like,
             'temp_min': d.main.temp_min,
             'temp_max': d.main.temp_max,
+            'weather': d.weather[0].main,
+            'weatherDesc': d.weather[0].description
         }
         return convertedData;
     }    

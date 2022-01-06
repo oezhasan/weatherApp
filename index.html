@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -12,24 +13,28 @@
     <main>
 
         <form onsubmit="return false" class="form" id="form" >
-            <h2 for="">How is the weather in</h3>
+            <h2 for="">How is the weather in</h2>
             <div class="searchbar">
-            <input id="location" type="text" placeholder="Search...">
-            <button id="btn-submit">
-                <i class="fas fa-question"></i>
-            </button>
-        </div>
+                <input id="location" type="text" placeholder="Search...">
+                <button id="btn-submit">
+                    <i class="fas fa-question"></i>
+                </button>
+            </div>
         </form>
         
         <div class="output inactive">
+            <button id="return-btn">
+                <i class="fas fa-chevron-left"></i>
+              </svg>
+            </button>
             <div class="output-summary">
                 <div class="summary-item">
-                    <p class="item-main"></p>
-                    <p class="item-sub"></p>
+                    <p id="temp" class="item-main"></p>
+                    <p id="city" class="item-sub"></p>
                 </div>
                 <div class="summary-item">
-                    <p class="item-main"></p>
-                    <p class="item-sub"></p>
+                    <p id="weather" class="item-main"></p>
+                    <p id="weatherDesc" class="item-sub"></p>
                 </div>
             </div>
             <div class="output-details">

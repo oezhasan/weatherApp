@@ -1,84 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300&display=swap');
 :root {
-    --clr-dark: #333;
-    --clr-light: #eee;
-    --clr-accent: #ddd;
-  }
-
-*{
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    box-sizing: border-box;
+  --darkgreen: #30505c;
+  --green: #45b29d;
+  --yellow: #efc94c;
+  --orange: #e27a3f;
+  --red: #df4949;
+  --light: #e5ebeb;
+  --dark: #403e39;
 }
 
-h2{
-    font-size: 47px;
-}
-main{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5em;
+  background-color: var(--light);
+  color: var(--dark);
 }
 
-.form{
-    padding: 2rem;
-    border: 1px solid var(--clr-dark);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.form *{
+h2 {
+  font-size: 2.5em;
 }
 
-#location{
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: blue
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#btn-submit{
-    background-color: #04AA6D;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
+.searchbar{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
+#btn-submit,
+#return-btn {
+  background-color: var(--green);
+  color: var(--light);
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
 
-.output{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 35vw;
-    height: 35vh;
-    border: 1px solid var(--clr-dark);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5em;
+
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: filter 0.3s ease;
 }
 
-.output-details{
-    align-self: center;
-    margin-top: auto;
-    display:flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-
-    margin-bottom: 2rem;
-    align-items:flex-end;
+#btn-submit:hover,
+#return-btn:hover {
+  filter: brightness(1.2);
 }
 
+#location {
+  flex: 1;
+  justify-self: center;
 
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid var(--dark);
 
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5em;
 
+  text-align: center;
+  padding: 0.5em;
 
+  transition: border 0.3s ease;
+}
 
+#location::placeholder {
+  color: var(--dark);
+}
 
+#location:focus {
+  border-bottom: 2px solid var(--green);
+}
+
+.output {
+  position: relative;
+  padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 2em;
+
+  gap: 1em;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+#return-btn {
+  position: absolute;
+  right: -0.5em;
+  top: -0.5em;
+}
+
+/* SUMMARY */
+
+.output-summary {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.item-main {
+  font-size: 3em;
+  margin:0;
+}
+
+.item-sub {
+  font-size: 1em;
+}
+
+.summary-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-item:first-child {
+  position: relative;
+}
+
+.summary-item:last-child {
+  border-left: 2px solid var(--dark);
+}
+
+/* DETAILS */
+
+.output-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.details-item h3 {
+  color: var(--green);
+  font-size: 1em;
+  margin: 0;
+}
+
+.details-item p {
+  margin: 0;
+}
 
 
 .inactive{
     display:none;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+
+  #content {
+    height: calc(100vh - 5.5em);
+  }
+
+  #main-screen,
+  #result-screen {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 500px) {
+  #h2 {
+    font-size: 2.25em;
+  }
+
+  #location {
+    font-size: 1.25em;
+  }
+
+  .output-summary {
+    flex-direction: column;
+  }
+
+  .summary-item:last-child {
+    border: 0;
+    border-top: 2px solid var(--darkgreen);
+  }
 }
