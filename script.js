@@ -6,10 +6,14 @@ const btnReturn = document.querySelector("#return-btn");
 const loc =  document.querySelector("#location");
 const form = document.querySelector(".form");
 const output = document.querySelector(".output");
+const loader = document.querySelector(".loader");
 
 btnSubmit.addEventListener("click", async()=>{
     try {
     if (loc.value === "") throw new Error("Enter a city");
+
+    loader.classList.remove("inactive");
+
     
     const w = new weather();
     const d = new dom();
@@ -21,9 +25,12 @@ btnSubmit.addEventListener("click", async()=>{
     loc.value ="";
     output.classList.remove("inactive");
     form.classList.add("inactive");
+    loader.classList.add("inactive");
+
     }
     catch(error){
         loc.value ="";
+        loader.classList.add("inactive");
 
         alert(error)
     }

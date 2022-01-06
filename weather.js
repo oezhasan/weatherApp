@@ -1,6 +1,7 @@
 import dom from "./dom.js";
 
 export default class weather{
+    
     dom = new dom();
 
     async getDatafromAPI(location){
